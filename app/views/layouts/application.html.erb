@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>Arlab</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "application", "assets/styles.css" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- <link rel="stylesheet" href="vendor/assets/stylesheets/styles.css"> -->
+
 </head>
 <body>
 
-<%= yield %>
+   <div class="wrapper">
+      <header class="page_header">
+         <div class="nav_bar">
+            <%= link_to 'All Students', students_path %> &emsp;
+            <%= link_to 'All Classes', school_classes_path %> &emsp;
+            <%= link_to 'Create a New Student', new_student_path %> &emsp;
+            <%= link_to 'Create a New Class', new_school_class_path %> &emsp;
+         </div>
 
+         <div class="head_logo">
+            <img class="logo" src="/assets/Flatiron-School-Logo.png" alt="The FlatIron school logo.">
+         </div>
+      </header>
+   <hr>
+   <div class="body_content">
+      <%= yield %>
+   </div>
+
+   </div>
 </body>
 </html>
